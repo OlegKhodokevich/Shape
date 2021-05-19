@@ -1,20 +1,16 @@
 package by.khodokevich.shape.entity;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
 public class Warehouse {
-    private static Logger LOGGER = LogManager.getLogger();
     private static Warehouse instance;
     private Map<Long, CubeParameter> cubeParameterMap;
 
     private Warehouse() {
-        cubeParameterMap = new HashMap<Long, CubeParameter>();
+        cubeParameterMap = new HashMap<>();
     }
 
     public static Warehouse getInstance() {

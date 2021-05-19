@@ -1,0 +1,31 @@
+18:22:19.369 [main] INFO  by.khodokevich.shape.parser.ParserStringToDouble - Start parseDataStringToDataForCube(). Line for parse = [ 0 , 0 0], [5,0, 0 ], [0  5, 0], [5.0, 5, 0 ], [0, 5, 5], [5, 0, 5], [0, -5, 5], [5, 5, 5]
+18:22:19.383 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [ 0 , 0 0], [5,0, 0 ], [0  5, 0], [5.0, 5, 0 ], [0, 5, 5], [5, 0, 5], [0, -5, 5], [5, 5, 5]
+18:22:19.384 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = true
+18:22:19.386 [main] INFO  by.khodokevich.shape.parser.ParserStringToDouble - End of parseDataStringToDataForCube(). We get points : [Point{x=0.0, y=0.0, z=0.0}, Point{x=5.0, y=0.0, z=0.0}, Point{x=0.0, y=5.0, z=0.0}, Point{x=5.0, y=5.0, z=0.0}, Point{x=0.0, y=5.0, z=5.0}, Point{x=5.0, y=0.0, z=5.0}, Point{x=0.0, y=-5.0, z=5.0}, Point{x=5.0, y=5.0, z=5.0}]
+18:22:19.412 [main] INFO  by.khodokevich.shape.parser.ParserStringToDouble - Start parseDataStringToDataForCube(). Line for parse = [ 0 , 0 0, [5,0, 0 ], [0  5, 0], [5.0, 5, 0 ], [0, 5, 5], [5, 0, 5], [0, -5, 5], [5, 5, 5]
+18:22:19.413 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [ 0 , 0 0, [5,0, 0 ], [0  5, 0], [5.0, 5, 0 ], [0, 5, 5], [5, 0, 5], [0, -5, 5], [5, 5, 5]
+18:22:19.413 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = false
+18:22:19.414 [main] INFO  by.khodokevich.shape.parser.ParserStringToDouble - Start parseDataStringToDataForCube(). Line for parse = [ 0 , 0 0, [5,0, 0 ], [0  5], [5.0, 5, 0 ], [0, 5, 5], [5, 0, 5], [0, -5, 5], [5, 5, 5]
+18:22:19.414 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [ 0 , 0 0, [5,0, 0 ], [0  5], [5.0, 5, 0 ], [0, 5, 5], [5, 0, 5], [0, -5, 5], [5, 5, 5]
+18:22:19.414 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = false
+18:22:48.903 [main] INFO  by.khodokevich.shape.reader.CubeDataReader - Start readCubeData(String fileName). File = data/cube_data_test.txt
+18:22:48.913 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [0 0, 0],[5,0 ,0] [0  5,0] [ 5 , 5.0 0], [0, 0, 5] ,[5, 0 5 ] , [0 5 5]   [5 5 5.0]
+18:22:48.914 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = true
+18:22:48.914 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [0 0, 0],[5,0 ,0] [0  5,0] [ 5 , 5.0 0, [0, 0, 5] ,[5, 0 5 ] , [0 5 5]   [5 5 5.0]
+18:22:48.915 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = false
+18:22:48.915 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [0 0, 0],[5,0 ,0] [0  5,0] [ 5 , 5.0 0], [0, 0, 5] ,[5, 0 5 ] , [0 5 -5]   [5 5 5.0]
+18:22:48.915 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = true
+18:22:48.915 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [0 0, 0],[5,0 ,0] [0  5,0] [ 5 , 5.0 0], [0, 0, 5] ,[5, 0 5 ] , [0 f5 5]   [5 5 5.0]
+18:22:48.917 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = false
+18:22:48.917 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [0 0, 0],[5,0 ,0] [0  5,0] [ 5 , 5.0 0], [0, 0, 5] ,[5, 0 5 ] , [0 5 5]   [5  5.0]
+18:22:48.920 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = false
+18:22:48.921 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [0, 0, 0], [7, 0, 0], [0, 7, 0], [ 7, 7, 0], [0, 0, 7], [7, 0, 7], [0, 7, 7], [7, 7, 7]
+18:22:48.921 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = true
+18:22:48.921 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [1, 0, 0], [8, 0, 0], [1, 7, 0], [ 8, 7, 0], [1, 0, 7], [8, 0, 7], [1, 7, 7], [8, 7, 7]
+18:22:48.921 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = true
+18:22:48.921 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [1, 0, -2], [8, 0, -2], [1, 7, -2], [ 8, 7, -2], [1, 0, 5], [8, 0, 5], [1, 7, 5], [8, 7, 5]
+18:22:48.921 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = true
+18:22:48.922 [main] INFO  by.khodokevich.shape.reader.CubeDataReader - End readCubeData(String fileName). Has found next string : [[0 0, 0],[5,0 ,0] [0  5,0] [ 5 , 5.0 0], [0, 0, 5] ,[5, 0 5 ] , [0 5 5]   [5 5 5.0], [0 0, 0],[5,0 ,0] [0  5,0] [ 5 , 5.0 0], [0, 0, 5] ,[5, 0 5 ] , [0 5 -5]   [5 5 5.0], [0, 0, 0], [7, 0, 0], [0, 7, 0], [ 7, 7, 0], [0, 0, 7], [7, 0, 7], [0, 7, 7], [7, 7, 7], [1, 0, 0], [8, 0, 0], [1, 7, 0], [ 8, 7, 0], [1, 0, 7], [8, 0, 7], [1, 7, 7], [8, 7, 7], [1, 0, -2], [8, 0, -2], [1, 7, -2], [ 8, 7, -2], [1, 0, 5], [8, 0, 5], [1, 7, 5], [8, 7, 5]]
+18:22:48.925 [main] INFO  by.khodokevich.shape.reader.CubeDataReader - Start readCubeData(String fileName). File = data/incorrect_cube_data_test.txt
+18:22:48.932 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - Start isValidStringForDouble(). Line = [0 0, 0],[5,0 ,0] [0  5,0] [ 5 , 5.0 0], [0, 0, 5] ,[5, 0 5 ] , [0 f5 5]   [5 5 5.0]
+18:22:48.933 [main] INFO  by.khodokevich.shape.validator.ValidatorStringForDataCube - End of isValidStringForDouble(). Result = false

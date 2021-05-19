@@ -31,18 +31,31 @@ public class QuadrantCubeSpecification implements CubeSpecification {
             double x = points[i].getX();
             double y = points[i].getY();
             double z = points[i].getZ();
-            if (x > maxX | x < minX) {
+            if (x > maxX || x < minX) {
                 result = false;
             }
-            if (y > maxY && y < minY) {
+            if (y > maxY || y < minY) {
                 result = false;
             }
-            if (z > maxZ && z < minZ) {
+            if (z > maxZ || z < minZ) {
                 result = false;
             }
             i++;
         }
 
         return result;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName()).append('{');
+        sb.append("minX=").append(minX);
+        sb.append(", maxX=").append(maxX);
+        sb.append("minY=").append(minY);
+        sb.append(", maxY=").append(maxY);
+        sb.append("minZ=").append(minZ);
+        sb.append(", maxZ=").append(maxZ).append('}');
+        return sb.toString();
     }
 }

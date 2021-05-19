@@ -9,19 +9,15 @@ import java.util.*;
 import static by.khodokevich.shape.service.OperationCalcLengthBetweenTwoPoints.calcLengthBetweenTwoPoints;
 
 public class ValidatorShapeCube {
-    static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public static boolean isCubeValid(List<Point> pointsList) {
         LOGGER.info("Start isCubeValid(). Array of points = " + pointsList);
 
-        boolean result = false;
-
         Point[] points = new Point[pointsList.size()];
         pointsList.toArray(points);
 
-        if (points.length == 8 && chekPointsOnPlaneParallelByX(points) && chekPointsOnPlaneParallelByY(points) && chekPointsOnPlaneParallelByZ(points)) {
-            result = true;
-        }
+        boolean result = points.length == 8 && chekPointsOnPlaneParallelByX(points) && chekPointsOnPlaneParallelByY(points) && chekPointsOnPlaneParallelByZ(points);
 
         LOGGER.info("End isCubeValid(). Result = " + result);
         return result;
@@ -29,7 +25,7 @@ public class ValidatorShapeCube {
 
     private static boolean chekPointsOnPlaneParallelByZ(Point[] points) {
         LOGGER.info("Start chekPointsOnPlaneParallelByZ()." + Arrays.toString(points));
-        boolean result = false;
+
         List<Point> pointsOnPlane1 = new ArrayList<>();
         List<Point> pointsOnPlane2 = new ArrayList<>();
         double z1 = points[0].getZ();
@@ -50,16 +46,16 @@ public class ValidatorShapeCube {
 
             }
         }
-        if (pointsOnPlane1.size() == 4 && chekIfShapeIsSquare(pointsOnPlane1) && pointsOnPlane2.size() == 4 && chekIfShapeIsSquare(pointsOnPlane2)) {
-            result = true;
-        }
+
+        boolean result = pointsOnPlane1.size() == 4 && chekIfShapeIsSquare(pointsOnPlane1) && pointsOnPlane2.size() == 4 && chekIfShapeIsSquare(pointsOnPlane2);
+
         LOGGER.info("End chekPointsOnPlaneParallelByZ(). Result = " + result);
         return result;
     }
 
     private static boolean chekPointsOnPlaneParallelByY(Point[] points) {
         LOGGER.info("Start chekPointsOnPlaneParallelByY()." + Arrays.toString(points));
-        boolean result = false;
+
         List<Point> pointsOnPlane1 = new ArrayList<>();
         List<Point> pointsOnPlane2 = new ArrayList<>();
         double y1 = points[0].getY();
@@ -82,16 +78,16 @@ public class ValidatorShapeCube {
 
             }
         }
-        if (pointsOnPlane1.size() == 4 && chekIfShapeIsSquare(pointsOnPlane1) && pointsOnPlane2.size() == 4 && chekIfShapeIsSquare(pointsOnPlane2)) {
-            result = true;
-        }
+
+        boolean result = pointsOnPlane1.size() == 4 && chekIfShapeIsSquare(pointsOnPlane1) && pointsOnPlane2.size() == 4 && chekIfShapeIsSquare(pointsOnPlane2);
+
         LOGGER.info("End chekPointsOnPlaneParallelByY(). Result = " + result);
         return result;
     }
 
     private static boolean chekPointsOnPlaneParallelByX(Point[] points) {
         LOGGER.info("Start chekPointsOnPlaneParallelByX()." + Arrays.toString(points));
-        boolean result = false;
+
         List<Point> pointsOnPlane1 = new ArrayList<>();
         List<Point> pointsOnPlane2 = new ArrayList<>();
         double x1 = points[0].getX();
@@ -114,9 +110,8 @@ public class ValidatorShapeCube {
 
             }
         }
-        if (pointsOnPlane1.size() == 4 && chekIfShapeIsSquare(pointsOnPlane1) && pointsOnPlane2.size() == 4 && chekIfShapeIsSquare(pointsOnPlane2)) {
-            result = true;
-        }
+        boolean result = pointsOnPlane1.size() == 4 && chekIfShapeIsSquare(pointsOnPlane1) && pointsOnPlane2.size() == 4 && chekIfShapeIsSquare(pointsOnPlane2);
+
         LOGGER.info("End chekPointsOnPlaneParallelByX(). Result = " + result);
         return result;
     }
@@ -124,7 +119,6 @@ public class ValidatorShapeCube {
     private static boolean chekIfShapeIsSquare(List<Point> points) {
         LOGGER.info("Start chekIfShapeIsSquare(). Points = " + points);
 
-        boolean result = false;
         int counter = 0;
         double diagonal = 0;
         double minLength = calcLengthBetweenTwoPoints(points.get(0), points.get(1));
@@ -147,9 +141,8 @@ public class ValidatorShapeCube {
             }
         }
         LOGGER.info("Side = " + minLength + ", counter = " + counter + ", diagonal = " + diagonal);
-        if (counter == 4 && diagonal == Math.sqrt(2) * minLength) {
-            result = true;
-        }
+
+        boolean result = counter == 4 && Math.abs(diagonal - (Math.sqrt(2) * minLength)) <= 0.0001;
         LOGGER.info("End chekIfShapeIsSquare(). Result = " + result);
         return result;
     }

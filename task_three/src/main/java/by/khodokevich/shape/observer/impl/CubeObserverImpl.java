@@ -10,6 +10,8 @@ import by.khodokevich.shape.service.impl.ServiceCubeImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Optional;
+
 public class CubeObserverImpl implements CubeObserver {
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -22,8 +24,10 @@ public class CubeObserverImpl implements CubeObserver {
         double surfaceArea = serviceCube.calcSquareOfCube(cube);
 
         Warehouse warehouse = Warehouse.getInstance();
-        CubeParameter cubeParameter = warehouse.getById(cubeId).get();
-        cubeParameter.setSurfaceArea(surfaceArea);
+        Optional<CubeParameter> cubeParameterOptional = warehouse.getById(cubeId);
+        if (cubeParameterOptional.isPresent()) {
+            cubeParameterOptional.get().setSurfaceArea(surfaceArea);
+        }
 
         LOGGER.info("Update surface = " + surfaceArea + " area in warehouse for cube = " + cube);
     }
@@ -37,8 +41,10 @@ public class CubeObserverImpl implements CubeObserver {
         double volume = serviceCube.calcVolumeOfCube(cube);
 
         Warehouse warehouse = Warehouse.getInstance();
-        CubeParameter cubeParameter = warehouse.getById(cubeId).get();
-        cubeParameter.setVolume(volume);
+        Optional<CubeParameter> cubeParameterOptional = warehouse.getById(cubeId);
+        if (cubeParameterOptional.isPresent()) {
+            cubeParameterOptional.get().setVolume(volume);
+        }
 
         LOGGER.info("Update volume = " + volume + " area  in warehouse for cube = " + cube);
     }

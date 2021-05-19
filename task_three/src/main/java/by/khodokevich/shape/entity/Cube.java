@@ -1,6 +1,6 @@
 package by.khodokevich.shape.entity;
 
-import by.khodokevich.shape.exeption.ProjectShapeException;
+import by.khodokevich.shape.exсeption.ProjectShapeException;
 import by.khodokevich.shape.observer.CubeEvent;
 import by.khodokevich.shape.observer.CubeObservable;
 import by.khodokevich.shape.observer.CubeObserver;
@@ -12,8 +12,8 @@ import java.util.Arrays;
 public class Cube implements CubeObservable {
 
     private long cubeId;
-    private Point[] points = new Point[8];
-    CubeObserver cubeObserver = new CubeObserverImpl();
+    private Point[] points;
+    private CubeObserver cubeObserver = new CubeObserverImpl();
 
     Cube(Point... points) {
         this.points = points;

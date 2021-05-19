@@ -2,7 +2,7 @@ package by.khodokevich.shape.service.impl;
 
 import by.khodokevich.shape.entity.Cube;
 import by.khodokevich.shape.entity.Point;
-import by.khodokevich.shape.exeption.ProjectShapeException;
+import by.khodokevich.shape.exсeption.ProjectShapeException;
 import by.khodokevich.shape.service.ServiceCube;
 import by.khodokevich.shape.validator.ValidatorShapeCube;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +14,7 @@ import java.util.List;
 import static by.khodokevich.shape.service.OperationGetLengthCube.*;
 
 public class ServiceCubeImpl implements ServiceCube {
-    static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public double calcSquareOfCube(Cube cube) {
         LOGGER.info("Start calcSquareOfCube (). Cube = " + cube.toString());

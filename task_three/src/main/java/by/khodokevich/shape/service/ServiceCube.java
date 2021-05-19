@@ -1,7 +1,7 @@
 package by.khodokevich.shape.service;
 
 import by.khodokevich.shape.entity.Cube;
-import by.khodokevich.shape.exeption.ProjectShapeException;
+import by.khodokevich.shape.exсeption.ProjectShapeException;
 
 public interface ServiceCube {
     double calcSquareOfCube(Cube cube);

@@ -1,7 +1,7 @@
 package by.khodokevich.shape.parser;
 
 import by.khodokevich.shape.entity.Point;
-import by.khodokevich.shape.exeption.ProjectShapeException;
+import by.khodokevich.shape.exсeption.ProjectShapeException;
 import by.khodokevich.shape.validator.ValidatorStringForDataCube;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ParserStringToDouble {
-    static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
     private static final String DATA_POINT_REG_EXP = "\\[(\\s*-?\\d+(\\.\\d+)?\\s*(,|\\s+)\\s*){2}-?\\d+(\\.\\d+)?\\s*\\]";
     private static final String DATA_DOUBLE_REG_EXP = "-?\\d+(\\.\\d+)?";
 
@@ -45,8 +45,7 @@ public class ParserStringToDouble {
             points.add(point);
         }
 
-        LOGGER.info("End of parseDataStringToDataForCube(). We get points : ");
-        points.forEach(s -> LOGGER.info(s));
+        LOGGER.info("End of parseDataStringToDataForCube(). We get points : " + points);
 
         return points;
     }
